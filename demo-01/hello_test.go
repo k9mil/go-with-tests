@@ -38,9 +38,14 @@ func TestHello(t *testing.T) {
 		want := "Hello, World"
 		assertCorrectMessage(t, got, want)
 	})
-	t.Run("empty string defaults to 'World'", func(t *testing.T) {
+	t.Run("in spanish", func(t *testing.T) {
 		got := Hello("Topuria", "Spanish")
 		want := "Hola, Topuria"
+		assertCorrectMessage(t, got, want)
+	})
+	t.Run("in french", func(t *testing.T) {
+		got := Hello("Baguette", "French")
+		want := "Bonjour, Baguette"
 		assertCorrectMessage(t, got, want)
 	})
 }
